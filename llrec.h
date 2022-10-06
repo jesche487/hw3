@@ -82,7 +82,23 @@ Node* llfilter(Node* head, Comp pred)
     // Provide your implementation below
     //*********************************************
 
+    if(head == NULL) {
+        return NULL;
+    }
 
+    // if true, current node must be filtered out
+    // return node pointer to new shrunken list
+    if(pred(head->val)) {
+        auto temp = head->next;
+        delete head;
+        return llfilter(temp, pred);
+    }
+    // if current node does not need to be deleted,
+    // move the list onto the next node
+    else {
+        head->next = llfilter(head->next, pred);
+        return head;
+    }
 }
 
 #endif
