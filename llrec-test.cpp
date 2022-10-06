@@ -67,9 +67,17 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+bool isOdd(int x) {
+    return(x % 2 == 1);
+}
 
+bool isEight(int x) {
+    return(x == 8);
+}
 
-
+bool isMultipleOfThree(int x) {
+    return(x % 3 == 0);
+}
 
 int main(int argc, char* argv[])
 {
@@ -81,13 +89,32 @@ int main(int argc, char* argv[])
     // -----------------------------------------------
     // Feel free to update any code below this point
     // -----------------------------------------------
+
+
     Node* head = readList(argv[1]);
     cout << "Original list: ";
     print(head);
 
+
+    /*
+    Node* smaller = head;
+    Node* larger = head;
     // Test out your linked list code
 
+    llpivot(head, smaller, larger, 8);
+    cout << "printing head" << endl;
+    print(head);
+    cout << "printing smaller" << endl;
+    print(smaller);
+    cout << "printing larger" << endl;
+    print(larger);
+    */
 
+    //head = llfilter(head, isOdd);
+    //head = llfilter(head, isEight);
+    head = llfilter(head, isMultipleOfThree);
+    cout << "printing head" << endl;
+    print(head);
 
     
     return 0;
