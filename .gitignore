@@ -1,0 +1,6 @@
+*.o
+heap_test/
+llrec-test
+logicsim/logicsim
+logicsim/plantuml.jar
+stack_test
